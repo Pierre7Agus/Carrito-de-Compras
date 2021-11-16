@@ -2,7 +2,9 @@ const templateCard = document.getElementById('template-card').content;
 const cards = document.getElementById('cards');
 const fragment = document.createDocumentFragment();
 
-
+cards.addEventListener('click', (e)=>{
+    addProducts(e)
+})
 
 const getInformation = async()=>{
     try{
@@ -33,3 +35,12 @@ const paintCards = (data) =>{
 
     cards.appendChild(fragment)
 }
+
+const addProducts = (e)=>{
+    const product = e.target
+    if(product.classList.contains('btn-dark')){
+        //setShoppingCar(product.parentElement)
+    }
+    e.stopPropagation()
+}
+
