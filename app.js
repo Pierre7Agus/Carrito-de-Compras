@@ -1,4 +1,8 @@
 const templateCard = document.getElementById('template-card').content;
+const templateCarrito = document.getElementById('template-carrito');
+const templateFooter=document.getElementById('template-footer');
+const items=document.getElementById('items');
+const footer=document.getElementById('footer');
 const cards = document.getElementById('cards');
 const fragment = document.createDocumentFragment();
 
@@ -17,7 +21,7 @@ const getInformation = async()=>{
         console.log(error)
     }
 }
-
+  
 document.addEventListener('DOMContentLoaded',()=>{
     getInformation()
 })
@@ -44,4 +48,17 @@ const addProducts = (e)=>{
         //setShoppingCar(product.parentElement)
     }
     e.stopPropagation()
+}
+
+const setShopCar=(parent)=>{
+    const product={
+        id:parent.querySelector('button').dataset.id,
+        title:parent.querySelector('p').textContent,
+        precio:parent.querySelector('p').textContent,
+        cantidad:1
+    }
+    if(carrito.hasOwnProperty(product.id)){
+        product.cantidad=carrito[product.id].cantidad + 1;
+    }
+    carrito[product.id]={...product}
 }
