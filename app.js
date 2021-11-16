@@ -2,6 +2,8 @@ const templateCard = document.getElementById('template-card').content;
 const cards = document.getElementById('cards');
 const fragment = document.createDocumentFragment();
 
+let carrito={};
+
 cards.addEventListener('click', (e)=>{
     addProducts(e)
 })
@@ -43,4 +45,3 @@ const addProducts = (e)=>{
     }
     e.stopPropagation()
 }
-
