@@ -21,7 +21,6 @@ const getInformation = async()=>{
         console.log(error)
     }
 }
-  
 document.addEventListener('DOMContentLoaded',()=>{
     getInformation()
 })
@@ -45,7 +44,7 @@ const paintCards = (data) =>{
 const addProducts = (e)=>{
     const product = e.target
     if(product.classList.contains('btn-dark')){
-        //setShoppingCar(product.parentElement)
+        setShopCar(product.parentElement)
     }
     e.stopPropagation()
 }
@@ -53,7 +52,7 @@ const addProducts = (e)=>{
 const setShopCar=(parent)=>{
     const product={
         id:parent.querySelector('button').dataset.id,
-        title:parent.querySelector('p').textContent,
+        title:parent.querySelector('h5').textContent,
         precio:parent.querySelector('p').textContent,
         cantidad:1
     }
