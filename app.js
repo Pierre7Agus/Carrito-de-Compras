@@ -101,5 +101,8 @@ const showFooter=()=>{
   if(Object.values(carrito).length<=0){
     return footer.innerHTML=`<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`
   }
+  const nCantidad=Object.values(carrito).reduce((acc,{cantidad})=>{
+    return acc+cantidad
+  },0)
 
 }
