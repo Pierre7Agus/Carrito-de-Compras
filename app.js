@@ -60,4 +60,19 @@ const setShopCar=(parent)=>{
         product.cantidad=carrito[product.id].cantidad + 1;
     }
     carrito[product.id]={...product}
+    showShopCar()
+}
+
+const showShopCar=()=>{
+  items.innerHTML=''
+  Object.values(carrito).forEach(({id,title,cantidad,precio})=>{
+    templateCarrito.querySelector('th').textContent=id
+    templateCarrito.querySelectorAll('td')[0].textContent=title
+    templateCarrito.querySelectorAll('td')[1].textContent=cantidad
+    templateCarrito.querySelector('span').textContent=cantidad*precio
+
+    const clone=templateCarrito.cloneNode(true)
+    fragment.appendChild(clone)
+  })
+  items.appendChild(fragment)
 }
