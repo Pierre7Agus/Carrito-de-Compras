@@ -96,3 +96,10 @@ const btnAction=(e)=>{
   showShopCar()
   e.stopPropagation()
 }
+
+const showFooter=()=>{
+  if(Object.values(carrito).length<=0){
+    return footer.innerHTML=`<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`
+  }
+
+}
