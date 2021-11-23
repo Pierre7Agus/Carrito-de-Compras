@@ -63,6 +63,7 @@ const setShopCar=(parent)=>{
     }
     carrito[product.id]={...product}
     showShopCar()
+    showFooter()
 }
 
 const showShopCar=()=>{
@@ -94,10 +95,12 @@ const btnAction=(e)=>{
     }
   }
   showShopCar()
+  showFooter()
   e.stopPropagation()
 }
 
 const showFooter=()=>{
+  footer.innerHTML=''
   if(Object.values(carrito).length<=0){
     return footer.innerHTML=`<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`
   }
@@ -108,4 +111,11 @@ const showFooter=()=>{
   const nPrecio=Object.values(carrito).reduce((acc,{cantidad,precio})=>{
     return acc+(cantidad*precio)
   },0)
+
+  templateFooter.querySelector('td').textContent=nCantidad
+  templateFooter.querySelector('span').textContent=nPrecio
+
+  const clone=templateFooter.cloneNode(true)
+  fragment.appendChild(clone)
+  footer.appendChild(fragment)
 }
