@@ -86,7 +86,7 @@ const btnAction=(e)=>{
     carrito[e.target.dataset.id].cantidad++
     carrito[e.target.dataset.id]=carrito[e.target.dataset.id]
   }
-  else{
+  if(e.target.classList.contains('btn-danger')){
     carrito[e.target.dataset.id].cantidad--
     carrito[e.target.dataset.id]=carrito[e.target.dataset.id]
     if(carrito[e.target.dataset.id].cantidad===0){
