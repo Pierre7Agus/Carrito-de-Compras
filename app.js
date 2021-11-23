@@ -86,6 +86,13 @@ const btnAction=(e)=>{
     carrito[e.target.dataset.id].cantidad++
     carrito[e.target.dataset.id]=carrito[e.target.dataset.id]
   }
+  else{
+    carrito[e.target.dataset.id].cantidad--
+    carrito[e.target.dataset.id]=carrito[e.target.dataset.id]
+    if(carrito[e.target.dataset.id].cantidad===0){
+      delete carrito[e.target.dataset.id]
+    }
+  }
   showShopCar()
   e.stopPropagation()
 }
