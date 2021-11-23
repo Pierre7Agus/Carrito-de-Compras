@@ -70,6 +70,8 @@ const showShopCar=()=>{
     templateCarrito.querySelectorAll('td')[0].textContent=title
     templateCarrito.querySelectorAll('td')[1].textContent=cantidad
     templateCarrito.querySelector('span').textContent=cantidad*precio
+    templateCarrito.querySelector('.btn-info').dataset.id=id
+    templateCarrito.querySelector('.btn-danger').dataset.id=id
 
     const clone=templateCarrito.cloneNode(true)
     fragment.appendChild(clone)
