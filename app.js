@@ -105,4 +105,7 @@ const showFooter=()=>{
     return acc+cantidad
   },0)
 
+  const nPrecio=Object.values(carrito).reduce((acc,{cantidad,precio})=>{
+    return acc+(cantidad*precio)
+  },0)
 }
