@@ -11,7 +11,9 @@ let carrito={};
 cards.addEventListener('click', (e)=>{
     addProducts(e)
 })
-
+items.addEventListener('click',(e)=>{
+  btnAction(e)
+})
 const getInformation = async()=>{
     try{
         let data  = await fetch('./data/data.json')
@@ -77,4 +79,13 @@ const showShopCar=()=>{
     fragment.appendChild(clone)
   })
   items.appendChild(fragment)
+}
+
+const btnAction=(e)=>{
+  if(e.target.classList.contains('btn-info')){
+    carrito[e.target.dataset.id].cantidad++
+    carrito[e.target.dataset.id]=carrito[e.target.dataset.id]
+  }
+  showShopCar()
+  e.stopPropagation()
 }
