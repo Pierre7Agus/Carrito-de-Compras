@@ -118,4 +118,11 @@ const showFooter=()=>{
   const clone=templateFooter.cloneNode(true)
   fragment.appendChild(clone)
   footer.appendChild(fragment)
+
+  const vaciarCarrito=document.getElementById('vaciar-carrito');
+  vaciarCarrito.addEventListener('click',()=>{
+    carrito={}
+    showShopCar()
+    showFooter()
+  })
 }
