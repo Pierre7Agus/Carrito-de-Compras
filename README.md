@@ -18,7 +18,7 @@ Carrito de compras básico que permite agregar y eliminar productos.
 
 ## Vista Previa
 
-![screenshot](https://i.picasion.com/pic91/b5354e04acf0957db8b438bb0894192a.gif)
+![screenshot](https://i.picasion.com/pic91/eb84b58668af972f775eed9412dbc0cb.gif)
 
 ## Tecnologías Usadas
 
